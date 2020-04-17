@@ -1,0 +1,66 @@
+<!--logs.wxml-->
+<view class="focus">
+  <view class="banner">
+    <image
+      class="focus_info_img"
+      src="/images/shop/banner.jpg"
+      mode="widthFix"
+    />
+  </view>
+  <view class="focus_info">
+    <image
+      class="avatar"
+      src="/images/index/logo.jpg"
+    />
+    <!-- <text class="slogan">德記大安點心</text> -->
+  </view>
+</view>
+
+<view class="info" wx:if="{{info.length > 0}}">
+  <view class="info_item"
+    wx:for="{{info}}"
+    wx:key="shopInfo_{{index}}"
+    data-phone-number="{{item.phoneNumeber}}"
+    bindtap="{{item.bindName}}"
+  >
+    <image
+      class="info_icon"
+      src="{{item.iconSrc}}"
+      mode="aspectFit"
+    />
+    <text class="desc">{{item.title}}</text>
+    <view class="arrow" wx:if="{{item.bindName}}"></view>
+  </view>
+</view>
+
+<view class="shop_image shop_image_skeleton" wx:if="{{shopImage.length === 0}}">
+  <view class="shop_title">
+    <view class="skeleton_txt"></view>
+  </view>
+  <view class="image_box">
+    <view class="image_box_row" wx:for="{{shopImageColSkt}}">
+      <view class="shop_img" wx:for="{{shopImageSkt}}">
+        <view class="skeleton_image"></view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="shop_image" wx:if="{{shopImage.length > 0}}">
+  <text class="shop_title">德記照片</text>
+  <view class="image_box">
+    <view class="image_box_row" wx:for="{{shopImage}}" wx:key="shopImage_{{index}}" wx:for-item="colItem">
+      <image
+        class="shop_img"
+        src="{{item.src}}"
+        mode="aspectFill"
+        bindtap="tapImage"
+        data-src="{{item.src}}"
+        wx:if="{{colItem.srcs}}"
+        wx:for="{{colItem.srcs}}"
+        wx:for-index="colIndex"
+        wx:key="colItem_{{colIndex}}"
+      />
+    </view>
+  </view>
+</view>

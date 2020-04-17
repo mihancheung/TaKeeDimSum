@@ -1,0 +1,80 @@
+@import '/template/error/error.wxss';
+
+
+page {
+  background: #ededed;
+}
+
+.post {
+  position: relative;
+  padding: 0 0 0;
+}
+
+.post_item {
+  min-height: 480rpx;
+  margin: 30rpx 0 0;
+  padding: 30rpx 40rpx 30rpx;
+  background: #fff;
+}
+
+.post_item:nth-child(1) {
+  margin-top: 0;
+}
+
+.info {
+  position: relative;
+  margin-bottom: 20rpx;
+}
+
+.title {
+  display: block;
+  font-size: 48rpx;
+  color: #232321;
+}
+
+.desc {
+  margin: 20rpx 0 0;
+  color: #BEC2C6;
+  font-size: 28rpx;
+}
+
+.author {
+  margin-right: 20rpx;
+}
+
+.banner {
+  height: 390rpx;
+}
+
+.banner_image {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.preview {
+  margin: 20rpx 0 0;
+}
+
+.prevview_post {
+  display: block;
+  font-size: 32rpx;
+  color: #666;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+.skeleton .preview .skeleton_txt {
+  margin: 20rpx 0 0;
+  height: 40rpx;
+}
+
+.skeleton .title .skeleton_txt {
+  width: 80%;
+  height: 66rpx;
+}
+
+.skeleton .desc .skeleton_txt {
+  width: 30%;
+  height: 40rpx;
+}

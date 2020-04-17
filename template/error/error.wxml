@@ -1,0 +1,18 @@
+<template name="error">
+  <view class="gb_error" catchtouchmove="true">
+    <image
+      class="gb_error_icon"
+      src="/images/error.png"
+      mode="aspectFill"
+    />
+    <text class="gb_error_title">獲取數據出現問題</text>
+    <text class="gb_error_desc">连接网络或使用按钮重新獲取</text>
+    <view class="gb_error_btn" hover-class="gb_error_btn_hover" bindtap="errorReload">
+      <image
+        class="gb_error_btn_icon"
+        src="/images/reload.png"
+        mode="aspectFill"
+      />
+    </view>
+  </view>
+</template>

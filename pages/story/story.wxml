@@ -1,0 +1,53 @@
+<import src="/template/error/error.wxml" />
+<template is="error" wx:if="{{isLoadError}}" data="{{errorReload}}" />
+
+<view class="skeleton" catchtouchmove="true" wx:if="{{isLoading}}">
+  <view class="post">
+    <view class="post_item" wx:for="{{skeletonData}}" wx:key="skeletonData_{{index}}">
+      <view class="info">
+        <view class="title">
+          <view class="skeleton_txt"></view>
+        </view>
+        <view class="desc">
+          <view class="skeleton_txt"></view>
+        </view>
+      </view>
+      <view class="banner">
+        <view class="skeleton_image"></view>
+      </view>
+      <view class="preview">
+        <view class="skeleton_txt"></view>
+        <view class="skeleton_txt"></view>
+        <view class="skeleton_txt"></view>
+        <view class="skeleton_txt"></view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="post" wx:if="{{!isLoading}}">
+  <block wx:for="{{list}}" wx:key="id">
+    <view class="post_item">
+      <navigator url="/pages/post/post?id={{item.id}}&updateTime={{item.updateTime}}" hover-class="none">
+        <view class="info">
+          <text class="title">{{item.title}}</text>
+          <view class="desc">
+            <text class="author">文 / {{item.author}}</text>
+          </view>
+        </view>
+
+        <view class="banner">
+          <image
+            class="banner_image"
+            src="{{item.banner.src}}"
+            mode="{{item.banner.mode || 'aspectFill'}}"
+          ></image>
+        </view>
+
+        <view class="preview">
+          <text class="prevview_post">{{item.lead}}</text>
+        </view>
+      </navigator>
+    </view>
+  </block>
+</view>

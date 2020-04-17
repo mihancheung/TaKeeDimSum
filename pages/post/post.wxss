@@ -1,0 +1,64 @@
+@import '/template/error/error.wxss';
+.page {
+  padding-bottom: calc(20rpx + constant(safe-area-inset-bottom));
+  padding-bottom: calc(20rpx + env(safe-area-inset-bottom));
+}
+
+.text, .img, .video {
+  display: block;
+  margin: 0 40rpx;
+}
+
+.img, .video {
+  width: calc(100vw - 80rpx);
+  height: auto;
+  margin-top: 40rpx;
+  background: #F1F2F7;
+}
+
+.title {
+  padding: 30rpx 0 0;
+  color: #232321;
+  font-size: 56rpx;
+  font-weight: bold;
+}
+
+.p {
+  margin-top: 50rpx;
+  margin-bottom: 50rpx;
+  color: #666;
+  font-size: 32rpx;
+  line-height: 2;
+  font-weight: 400;
+}
+
+.author {
+  margin-top: 40rpx;
+  margin-bottom: 50rpx;
+  font-size: 28rpx;
+  color: #BEC2C6;
+}
+
+.skeleton {
+  background: #fff;
+}
+
+.skeleton .title .skeleton_txt {
+  height: 100rpx;
+  margin: 0 40rpx;
+}
+
+.skeleton .author .skeleton_txt {
+  margin: 0 40rpx;
+  height: 40rpx;
+  width: 30%;
+}
+
+.skeleton .p .skeleton_txt {
+  margin: 20rpx 40rpx 0;
+  height: 40rpx;
+}
+
+.skeleton .img .skeleton_image {
+  margin: 50rpx 40rpx 0;
+}

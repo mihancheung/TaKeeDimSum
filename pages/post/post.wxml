@@ -1,0 +1,30 @@
+<import src="/template/error/error.wxml" />
+<template is="error" wx:if="{{isLoadError}}" data="{{errorReload}}" />
+
+<view class="skeleton" catchtouchmove="true" wx:if="{{isLoading}}">
+  <view wx:for="{{skeletonData}}" wx:for-item="colItem" wx:key="skeleton_{{index}}" class="{{colItem.type}}">
+    <view class="{{colItem.type === 'img' || colItem.type === 'video' ? 'skeleton_image' : 'skeleton_txt'}}" wx:for="{{colItem.child}}"
+      wx:key="skeleton_child{{index}}"
+    ></view>
+  </view>
+</view>
+
+
+<view class="page" wx:if="{{!isLoading}}">
+  <block wx:for="{{post}}" wx:key="post_{{index}}">
+    <text wx:if="{{item.type === 'title'}}" class="text title">{{item.ctn}}</text>
+    <text wx:if="{{item.type === 'p'}}" class="text p">{{item.ctn}}</text>
+    <text wx:if="{{item.type === 'author'}}" class="text author">文 / {{item.ctn}}</text>
+    <video wx:if="{{item.type === 'video'}}" src="{{item.src}}" class="video" poster="{{item.poster}}"></video>
+    <image
+      wx:if="{{item.type === 'image'}}"
+      class="img"
+      src="{{item.src}}"
+      data-src="{{item.src}}"
+      mode="{{item.mode || 'widthFix'}}"
+      bindtap="tapImage"
+      style="height: calc((100vw - 80rpx) * ({{item.height / item.width}}))"
+      lazy-load
+    ></image>  
+  </block>
+</view>
